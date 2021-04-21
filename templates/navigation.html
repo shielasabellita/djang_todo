@@ -1,0 +1,47 @@
+{% load static %}
+
+<style>
+    nav { 
+        background-color: #3e5947;
+    }
+    .title {
+        color: white;
+    }
+    .login-form { 
+        border-top: 1px solid #dedede;
+        padding-top: 15px;
+    }
+    .login-card {
+        margin: 10% auto;
+        padding: 10px;
+    }
+    .btn-default {
+        background-color: #3e5947 !important;
+        color: white;
+    }
+    li {
+        list-style-type: none;
+    }
+    .table-container {
+        /* border: 1px solid #dedede; */
+        padding: 10px;
+    }
+</style>
+
+<nav class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <li class="nav-item">
+            <strong class="title">To Do App</strong>
+        </li>
+        
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+            <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ user }}</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="logout">Logout</a>
+            </div>
+        </li>
+        {% endif %}
+        
+    </div>
+</nav>

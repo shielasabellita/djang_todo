@@ -1,0 +1,36 @@
+{% extends 'templates.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<br>
+<div class="container">
+    <a href="dashboard" class="btn btn-light btn-sm">←Back</a>
+    <button class="btn btn-danger btn-sm float-right" onclick="del({{ id }})">Delete</button>
+    <br> <br>
+    <form action="#" method="POST" id="editform">
+        {% csrf_token %}
+        <div class="col-md-12" style="border: 1px solid #ced4da; border-radius: .25rem;">
+            <input class="form-control" type="text" value="{{ id }}" style="display: none;" name="id">
+            
+            <small>Todo</small><br>
+            <input class="form-control" type="text" value="{{ todo }}" name="todo"> <br>
+            
+            <small>Is Done</small><br>
+            <input type="checkbox" name="is_done" id="is_done" value="{{ is_done }}"> <br>
+
+            <div style="margin: .50rem 0;">
+                <button type="button" class="btn btn-sm btn-default" onclick="save()">Save</button>
+            </div>
+
+        </div>
+        
+    </form>
+</div>
+
+{% endblock %}
+
+{% block script %}
+  <script src="{% static 'js/todo_details.js' %}"></script>
+{% endblock %}
