@@ -5,7 +5,6 @@ function table_onload(){
     $.get({
         url: "getlist", async: false,
         success: function(data){
-            console.log(data)
             if(data) {             
                 table.rows.add( data['message'] ).draw();
             }
