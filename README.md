@@ -1,1 +1,3 @@
-# djang_todo
+Simple To Do App
+
+CRUD operation
